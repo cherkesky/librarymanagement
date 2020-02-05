@@ -1,9 +1,10 @@
 from django.db import models
 
 class Book(models.Model):
-  title = models.CharField(max_length=50)
-  address = models.CharField(max_length=50)
-    
+  title = model.models.CharField(max_length=50)
+  isbn = model.models.CharField(max_length=50)
+  author = model.models.CharField(max_length=50)
+  year = model.models.CharField(max_length=50)
 
     class Meta:
         verbose_name = ("Book")
