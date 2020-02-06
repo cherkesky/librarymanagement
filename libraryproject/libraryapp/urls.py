@@ -6,4 +6,5 @@ app_name = "libraryapp"
 urlpatterns = [
     path('', list, name='home'),
     path('books/', list, name='books'),
+    path('librarians/', librarian_list, name='librarians'),
 ]
