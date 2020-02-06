@@ -23,7 +23,7 @@ def library_list(request):
                 library = Library()
                 library.id = row['id']
                 library.title = row['title']
-                library.name = row['name']
+                library.address = row['address']
 
                 all_libraries.append(library)
 
