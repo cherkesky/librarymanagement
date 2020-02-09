@@ -8,7 +8,8 @@ from ..connection import Connection
 def book_list(request):
     if request.method == 'GET':
         with sqlite3.connect(Connection.db_path) as conn:
-            conn.row_factory = model_factory(Book)
+            # conn.row_factory = model_factory(Book)
+            conn.row_factory = sqlite3.Row
             db_cursor = conn.cursor()
 
             db_cursor.execute("""
@@ -17,7 +18,7 @@ def book_list(request):
                 b.title,
                 b.isbn,
                 b.author,
-                b.year_published,
+                b.year,
                 b.librarian_id,
                 b.location_id
             from libraryapp_book b
@@ -32,7 +33,7 @@ def book_list(request):
                 book.title = row['title']
                 book.isbn = row['isbn']
                 book.author = row['author']
-                book.year_published = row['year_published']
+                book.year = row['year']
                 book.librarian_id = row['librarian_id']
                 book.location_id = row['location_id']
 

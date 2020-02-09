@@ -13,6 +13,7 @@ def library_list(request):
             select
                 li.id,
                 li.title,
+                li.address
             from libraryapp_library li
             """)
 
@@ -27,7 +28,7 @@ def library_list(request):
 
                 all_libraries.append(library)
 
-        template = 'library/list.html'
+        template = 'libraries/list.html'
         context = {
             'all_libraries': all_libraries
         }
