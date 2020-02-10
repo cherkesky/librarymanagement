@@ -21,6 +21,5 @@ from libraryapp.models import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('libraryapp.urls')),
-    path('logout/', logout_user, name='logout'),
 ]
 
